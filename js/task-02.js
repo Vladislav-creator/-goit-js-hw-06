@@ -6,11 +6,30 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
-const a = document.querySelector("#ingredients");
+const listEl = document.querySelector("#ingredients");
+const elementsToAdd = [];
 ingredients.forEach((el) => {
-  const heading = document.createElement("li");
-  heading.className = "item";
-  heading.textContent = el;
-  a.append(heading);
+  const liEl = document.createElement("li");
+  liEl.className = "item";
+  liEl.textContent = el;
+  elementsToAdd.push(liEl);
 });
-console.log(a);
+listEl.append(...elementsToAdd);
+console.log(elementsToAdd);
+
+//2option
+// const listEl = document.querySelector("#ingredients");
+// const listElstr = ingredients
+//   .map((liElvalue) => `<li class="item">${liElvalue}</li>`)
+//   .join("");
+// listEl.innerHTML = listElstr;
+
+//3option
+// const listEl = document.querySelector("#ingredients");
+// ingredients.forEach((el) => {
+//   const liEl = document.createElement("li");
+//   liEl.className = "item";
+//   liEl.textContent = el;
+//   listEl.append(liEl);
+// });
+// console.log(listEl);

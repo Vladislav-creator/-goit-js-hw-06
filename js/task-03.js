@@ -14,10 +14,12 @@ const images = [
 ];
 const list = document.querySelector(".gallery");
 console.log(list);
-const markup = images.map(
-  (image) =>
-    `<li class="list-item"><img src="${image.url}" alt="${image.alt}" width = '300px' height = '200px'></li>`
-);
+const markup = images
+  .map(
+    (image) =>
+      `<li class="list-item"><img src="${image.url}" alt="${image.alt}" width = '300px' height = '200px'></li>`
+  )
+  .join("");
 list.insertAdjacentHTML("beforeend", markup);
 const menuItemsByTagName = document.querySelector("ul");
 menuItemsByTagName.style.listStyle = "none";
